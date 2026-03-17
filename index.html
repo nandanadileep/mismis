@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DJ Learning Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>DJ Learning Lab</h1>
+      <p>Learn DJing through guided lessons, drills, and instant quiz feedback.</p>
+      <div class="hero-actions">
+        <button id="resetProgress" class="danger">Reset progress</button>
+        <span id="completionBadge" aria-live="polite">0% complete</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel" aria-labelledby="lessonHeading">
+        <h2 id="lessonHeading">Interactive Lesson Path</h2>
+        <p>Pick a lesson, study the concept, do the drill, pass the check, then complete it.</p>
+        <div class="learning-layout">
+          <aside id="moduleContainer" class="module-list" aria-label="Module and lesson navigation"></aside>
+
+          <article class="lesson-player" aria-live="polite">
+            <p class="eyebrow" id="playerModule"></p>
+            <h3 id="playerTitle">Choose a lesson to start</h3>
+            <p id="playerObjective" class="muted"></p>
+
+            <div class="lesson-block">
+              <h4>Teach me</h4>
+              <p id="playerExplain"></p>
+            </div>
+
+            <div class="lesson-block">
+              <h4>How to practice</h4>
+              <ol id="playerSteps"></ol>
+              <button id="markPractice" class="secondary" disabled>I practiced this drill</button>
+              <p id="practiceStatus" class="muted"></p>
+            </div>
+
+            <div class="lesson-block">
+              <h4>Knowledge check</h4>
+              <p id="quizPrompt"></p>
+              <div id="quizChoices" class="choice-grid"></div>
+              <p id="quizFeedback" class="muted"></p>
+            </div>
+
+            <div class="lesson-actions">
+              <button id="completeLesson" disabled>Mark lesson complete</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="practiceHeading">
+        <h2 id="practiceHeading">Practice Console</h2>
+        <div class="practice-grid">
+          <article>
+            <h3>Focused Practice Timer</h3>
+            <p>Train in 5-minute rounds and track consistency.</p>
+            <div id="timerDisplay" class="timer">05:00</div>
+            <div class="button-row">
+              <button id="startTimer">Start</button>
+              <button id="pauseTimer">Pause</button>
+              <button id="resetTimer">Reset</button>
+            </div>
+          </article>
+
+          <article>
+            <h3>Random Drill Generator</h3>
+            <p>Get a random challenge to avoid repetitive practice.</p>
+            <button id="newDrill">Generate Drill</button>
+            <p id="drillOutput" class="muted">Hit generate to get a challenge.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="songAgentHeading">
+        <h2 id="songAgentHeading">Song Match Agent</h2>
+        <p>Find tracks that fit your current song by BPM, key compatibility, and energy level.</p>
+        <div class="song-agent-grid">
+          <article class="song-agent-controls">
+            <label>
+              Current Song BPM
+              <input id="songBpm" type="number" min="70" max="180" value="124" />
+            </label>
+
+            <label>
+              Current Song Key (Camelot)
+              <select id="songKey">
+                <option>8A</option>
+                <option>9A</option>
+                <option>10A</option>
+                <option>11A</option>
+                <option>12A</option>
+                <option>1A</option>
+                <option>2A</option>
+                <option>3A</option>
+                <option>4A</option>
+                <option>5A</option>
+                <option>6A</option>
+                <option>7A</option>
+                <option>8B</option>
+                <option>9B</option>
+                <option>10B</option>
+                <option>11B</option>
+                <option>12B</option>
+                <option>1B</option>
+                <option>2B</option>
+                <option>3B</option>
+                <option>4B</option>
+                <option>5B</option>
+                <option>6B</option>
+                <option>7B</option>
+              </select>
+            </label>
+
+            <label>
+              Target Energy
+              <select id="songEnergy">
+                <option value="1">1 - Warmup</option>
+                <option value="2">2 - Light groove</option>
+                <option value="3" selected>3 - Lift</option>
+                <option value="4">4 - Peak</option>
+                <option value="5">5 - Max energy</option>
+              </select>
+            </label>
+
+            <label>
+              Internet Search Style
+              <input id="songStyle" type="text" value="house" placeholder="house, techno, afro house..." />
+            </label>
+
+            <button id="findSongs">Find matching songs</button>
+            <button id="findOnlineSongs" class="secondary">Find internet songs</button>
+            <p id="onlineStatus" class="muted">Internet search uses public music APIs.</p>
+          </article>
+
+          <article>
+            <h3>Recommended Mix Candidates</h3>
+            <div id="songResults" class="song-results"></div>
+
+            <h3>Internet Song Results</h3>
+            <div id="onlineSongResults" class="song-results"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="notesHeading">
+        <h2 id="notesHeading">Session Notes</h2>
+        <p>Write what improved and what to fix next set. Saved locally.</p>
+        <textarea id="practiceNotes" rows="8" placeholder="Example: Beatmatch was stable, but phrase timing on drop handoff was late by 2 bars."></textarea>
+      </section>
+    </main>
+
+    <footer>
+      <small>Built for progressive DJ mastery: foundations, musicality, performance, and career growth.</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

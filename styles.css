@@ -1,0 +1,291 @@
+:root {
+  color-scheme: dark;
+  --bg: #0e1420;
+  --panel: #161f2f;
+  --panel-soft: #1d2a3f;
+  --text: #e8eef9;
+  --muted: #9fb2ce;
+  --accent: #49dcb1;
+  --accent-2: #78a8ff;
+  --danger: #ff5f6d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #15253f, var(--bg));
+  color: var(--text);
+}
+
+.hero,
+main,
+footer {
+  width: min(1180px, 94vw);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 1.8rem 0 0.8rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.panel {
+  background: color-mix(in hsl, var(--panel), black 7%);
+  border: 1px solid #314766;
+  border-radius: 14px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.learning-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1rem;
+}
+
+.module-list {
+  display: grid;
+  gap: 0.7rem;
+  max-height: 75vh;
+  overflow: auto;
+  padding-right: 0.3rem;
+}
+
+.module {
+  background: var(--panel-soft);
+  border: 1px solid #3e577a;
+  border-radius: 10px;
+  padding: 0.6rem;
+}
+
+.module h3 {
+  margin: 0.2rem 0 0.6rem;
+  font-size: 1rem;
+}
+
+.lesson-list {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.lesson-nav {
+  width: 100%;
+  border: 1px solid #486188;
+  background: #172338;
+  color: var(--text);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  text-align: left;
+  padding: 0.45rem 0.55rem;
+}
+
+.lesson-nav.done strong {
+  color: var(--accent);
+}
+
+.lesson-nav.active {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 1px var(--accent-2) inset;
+}
+
+.lesson-player {
+  background: var(--panel-soft);
+  border: 1px solid #3e577a;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.85rem;
+}
+
+.lesson-player h3 {
+  margin: 0.2rem 0 0.4rem;
+}
+
+.lesson-block {
+  margin-top: 0.8rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid #364d6d;
+}
+
+.lesson-block h4 {
+  margin: 0 0 0.45rem;
+}
+
+.lesson-block ol {
+  margin-top: 0.4rem;
+  padding-left: 1.2rem;
+}
+
+.choice-grid {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.4rem;
+}
+
+.choice-btn,
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.46rem 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--accent);
+  color: #082118;
+}
+
+.choice-btn {
+  text-align: left;
+  background: #2a3b58;
+  color: var(--text);
+  border: 1px solid #486188;
+}
+
+button.secondary {
+  background: #2a3b58;
+  color: var(--text);
+  border: 1px solid #486188;
+}
+
+button.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.lesson-actions {
+  margin-top: 1rem;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.9rem;
+}
+
+.practice-grid article {
+  background: var(--panel-soft);
+  border: 1px solid #3e577a;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.song-agent-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+  gap: 0.9rem;
+}
+
+.song-agent-controls {
+  background: var(--panel-soft);
+  border: 1px solid #3e577a;
+  border-radius: 10px;
+  padding: 0.8rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.song-agent-controls label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.song-agent-controls input,
+.song-agent-controls select {
+  border-radius: 8px;
+  border: 1px solid #486188;
+  background: #0f1a2b;
+  color: var(--text);
+  padding: 0.45rem 0.5rem;
+}
+
+.song-results {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.song-card {
+  background: var(--panel-soft);
+  border: 1px solid #3e577a;
+  border-radius: 10px;
+  padding: 0.7rem;
+}
+
+.song-card h4 {
+  margin: 0.1rem 0 0.35rem;
+}
+
+.timer {
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+  margin: 0.25rem 0;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+#completionBadge {
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #3e577a;
+  background: #0f1a2b;
+  color: var(--text);
+  padding: 0.7rem;
+}
+
+footer {
+  color: var(--muted);
+  padding: 0.6rem 0 1.6rem;
+}
+
+@media (max-width: 960px) {
+  .learning-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .module-list {
+    max-height: none;
+  }
+
+  .song-agent-grid {
+    grid-template-columns: 1fr;
+  }
+}
