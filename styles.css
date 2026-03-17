@@ -307,3 +307,64 @@ button:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
   color: var(--text-soft);
   line-height: 1.55;
 }
+
+/* ─── Song Agent ──────────────────────────────────────── */
+.song-agent-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 300px) 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+.song-agent-controls {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.9rem;
+}
+.song-agent-controls label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: 'Syne', sans-serif;
+}
+.song-agent-controls input,
+.song-agent-controls select {
+  border-radius: 9px;
+  border: 1px solid var(--border-mid);
+  background: rgba(0,0,0,0.35);
+  color: var(--text);
+  padding: 0.5rem 0.65rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.song-agent-controls input:focus,
+.song-agent-controls select:focus { border-color: var(--accent-2); }
+.song-agent-controls select option { background: #101928; }
+
+.song-results { display: grid; gap: 0.6rem; }
+.song-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.song-card:hover { background: rgba(255,255,255,0.05); border-color: var(--border-mid); }
+.song-card h4 {
+  margin: 0 0 0.25rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+}
+.song-card audio { width: 100%; margin-top: 0.5rem; border-radius: 8px; height: 32px; }
+.song-card a { color: var(--accent-2); font-size: 0.82rem; text-decoration: none; }
+.song-card a:hover { text-decoration: underline; }
