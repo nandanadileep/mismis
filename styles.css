@@ -87,3 +87,92 @@ body {
   color: var(--accent);
   background: rgba(0, 245, 196, 0.07);
 }
+
+/* ─── Panels ──────────────────────────────────────────── */
+.panel {
+  background: var(--panel);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.8rem;
+  margin: 1.2rem 0;
+  transition: border-color 0.2s;
+}
+.panel:hover { border-color: var(--border-mid); }
+.panel > h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.3rem;
+}
+.panel > p { margin: 0 0 1.2rem; color: var(--muted); font-size: 0.88rem; }
+
+/* ─── Learning Layout ─────────────────────────────────── */
+.learning-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+/* ─── Module List ─────────────────────────────────────── */
+.module-list {
+  display: grid;
+  gap: 0.5rem;
+  max-height: 78vh;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-mid) transparent;
+}
+.module-list::-webkit-scrollbar { width: 4px; }
+.module-list::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 99px; }
+
+.module {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.75rem;
+  transition: border-color 0.2s;
+}
+.module:hover { border-color: var(--border-mid); }
+.module h3 {
+  margin: 0 0 0.6rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.lesson-list { display: grid; gap: 0.3rem; }
+
+.lesson-nav {
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-soft);
+  border-radius: 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.82rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.lesson-nav:hover { background: rgba(255,255,255,0.05); color: var(--text); }
+.lesson-nav.active {
+  background: rgba(107,159,255,0.12);
+  border-color: rgba(107,159,255,0.45);
+  color: #fff;
+  font-weight: 500;
+}
+.lesson-nav.done strong { color: var(--accent); }
+.lesson-nav strong { color: var(--muted); flex-shrink: 0; }
