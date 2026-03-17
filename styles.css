@@ -176,3 +176,48 @@ body {
 }
 .lesson-nav.done strong { color: var(--accent); }
 .lesson-nav strong { color: var(--muted); flex-shrink: 0; }
+
+/* ─── Lesson Player ───────────────────────────────────── */
+.lesson-player {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+.eyebrow {
+  margin: 0 0 0.25rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+.lesson-player h3 {
+  margin: 0 0 0.2rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+#playerObjective { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.88rem; font-style: italic; }
+
+.lesson-block { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.lesson-block h4 {
+  margin: 0 0 0.55rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-3);
+}
+.lesson-block p, .lesson-block ol { color: var(--text-soft); font-size: 0.9rem; }
+.lesson-block ol { margin: 0.3rem 0 0.8rem; padding-left: 1.3rem; }
+.lesson-block ol li { margin-bottom: 0.3rem; }
+
+.lesson-actions { margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+
+/* ─── Quiz ────────────────────────────────────────────── */
+.choice-grid { display: grid; gap: 0.4rem; margin-top: 0.5rem; }
