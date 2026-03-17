@@ -20,7 +20,46 @@
         <span id="completionBadge" aria-live="polite">0% complete</span>
       </div>
     </header>
-    <main></main>
+
+    <main>
+      <section class="panel" aria-labelledby="lessonHeading">
+        <h2 id="lessonHeading">Interactive Lesson Path</h2>
+        <p>Pick a lesson, study the concept, do the drill, pass the check, then complete it.</p>
+        <div class="learning-layout">
+          <aside id="moduleContainer" class="module-list" aria-label="Module and lesson navigation"></aside>
+
+          <article class="lesson-player" aria-live="polite">
+            <p class="eyebrow" id="playerModule"></p>
+            <h3 id="playerTitle">Choose a lesson to start</h3>
+            <p id="playerObjective" class="muted"></p>
+
+            <div class="lesson-block">
+              <h4>Teach me</h4>
+              <p id="playerExplain"></p>
+            </div>
+
+            <div class="lesson-block">
+              <h4>How to practice</h4>
+              <ol id="playerSteps"></ol>
+              <button id="markPractice" class="secondary" disabled>I practiced this drill</button>
+              <p id="practiceStatus" class="muted"></p>
+            </div>
+
+            <div class="lesson-block">
+              <h4>Knowledge check</h4>
+              <p id="quizPrompt"></p>
+              <div id="quizChoices" class="choice-grid"></div>
+              <p id="quizFeedback" class="muted"></p>
+            </div>
+
+            <div class="lesson-actions">
+              <button id="completeLesson" disabled>Mark lesson complete</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
     <footer>
       <small>Built for progressive DJ mastery: foundations, musicality, performance, and career growth.</small>
     </footer>
