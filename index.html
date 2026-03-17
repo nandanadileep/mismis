@@ -81,7 +81,7 @@
           </article>
         </div>
       </section>
-    </main>
+
 
     <footer>
       <small>Built for progressive DJ mastery: foundations, musicality, performance, and career growth.</small>
@@ -89,3 +89,46 @@
     <script src="app.js"></script>
   </body>
 </html>
+
+      <section class="panel" aria-labelledby="songAgentHeading">
+        <h2 id="songAgentHeading">Song Match Agent</h2>
+        <p>Find tracks that fit your current song by BPM, key compatibility, and energy level.</p>
+        <div class="song-agent-grid">
+          <article class="song-agent-controls">
+            <label>Current Song BPM<input id="songBpm" type="number" min="70" max="180" value="124" /></label>
+            <label>Current Song Key (Camelot)
+              <select id="songKey">
+                <option>8A</option><option>9A</option><option>10A</option><option>11A</option><option>12A</option>
+                <option>1A</option><option>2A</option><option>3A</option><option>4A</option><option>5A</option>
+                <option>6A</option><option>7A</option><option>8B</option><option>9B</option><option>10B</option>
+                <option>11B</option><option>12B</option><option>1B</option><option>2B</option><option>3B</option>
+                <option>4B</option><option>5B</option><option>6B</option><option>7B</option>
+              </select>
+            </label>
+            <label>Target Energy
+              <select id="songEnergy">
+                <option value="1">1 - Warmup</option><option value="2">2 - Light groove</option>
+                <option value="3" selected>3 - Lift</option><option value="4">4 - Peak</option>
+                <option value="5">5 - Max energy</option>
+              </select>
+            </label>
+            <label>Internet Search Style<input id="songStyle" type="text" value="house" placeholder="house, techno, afro house..." /></label>
+            <button id="findSongs">Find matching songs</button>
+            <button id="findOnlineSongs" class="secondary">Find internet songs</button>
+            <p id="onlineStatus" class="muted">Internet search uses public music APIs.</p>
+          </article>
+          <article>
+            <h3>Recommended Mix Candidates</h3>
+            <div id="songResults" class="song-results"></div>
+            <h3>Internet Song Results</h3>
+            <div id="onlineSongResults" class="song-results"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="notesHeading">
+        <h2 id="notesHeading">Session Notes</h2>
+        <p>Write what improved and what to fix next set. Saved locally.</p>
+        <textarea id="practiceNotes" rows="8" placeholder="Example: Beatmatch was stable, but phrase timing on drop handoff was late by 2 bars."></textarea>
+      </section>
+    </main>
