@@ -105,6 +105,8 @@ let activeModuleIndex = 0;
 let activeLessonIndex = 0;
 let currentQuizPassed = false;
 
+document.addEventListener('DOMContentLoaded', () => {
+
 const completionBadge = document.getElementById('completionBadge');
 const moduleContainer = document.getElementById('moduleContainer');
 const notesEl = document.getElementById('practiceNotes');
@@ -444,3 +446,5 @@ renderModuleList();
 renderLessonPlayer();
 renderTimer();
 renderSongMatches();
+
+}); // end DOMContentLoaded
